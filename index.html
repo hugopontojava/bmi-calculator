@@ -8,27 +8,25 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1 class="title">IMC CALCULATOR</h1>
-  </header>
   <main>
     <div class="main-container">
-      <h2 class="sub-title">Insert your infos :</h2>
-      <form action="#">
-        <div class="">
-          <label for="name">Name:</label>
-          <input type="text" name="name">
-          <label for="age">Age:</label>
-          <input type="text" name="agr">
+      <div class="content-wrapper">
+      <h1 class="title">IMC Calculator</h1>
+      <h2 class="sub-title">Insert your infos:</h2>
+      <div class="">
+        <form action="#">
+          <div class="row">
+            <label for="weight">Weight (kg):</label>
+            <input type="text" name="weight" class="text-area">
+          </div>
+          <div class="row">
+            <label for="height">Height (cm):</label>
+            <input type="text" name="height" class="text-area">
+          </div>
+          </form>
         </div>
-        <div class="">
-          <label for="weight">Weight:</label>
-          <input type="number" name="weight">
-          <label for="height">Height:</label>
-          <input type="number" name="height">
-        </div>
-        <button id="calc-btn">Calculate</button>
-      </form>
+        <input type="submit" id="calc-btn" value="Calculate">
+      </div>
     </div>
     <p class="result"></p>
   </main>
