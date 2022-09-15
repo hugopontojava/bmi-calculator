@@ -8,29 +8,30 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-    <div class="main-container">
-      <div class="content-wrapper">
-      <h1 class="title">IMC Calculator</h1>
-      <h2 class="sub-title">Insert your infos:</h2>
-      <div class="">
-        <form action="#">
-          <div class="row">
-            <label for="weight">Weight (kg):</label>
-            <input type="text" name="weight" class="text-area">
-          </div>
-          <div class="row">
-            <label for="height">Height (cm):</label>
-            <input type="text" name="height" class="text-area">
-          </div>
-          </form>
+  <div class="main-container">
+    <div class="content-wrapper">
+    <h1 class="title">IMC Calculator</h1>
+    <h2 class="sub-title">Insert your infos:</h2>
+    <div class="">
+      <form action="#">
+        <div class="row">
+          <label for="weight">Weight (kg):</label>
+          <input type="text" name="weight" class="text-area weight">
         </div>
-        <input type="submit" id="calc-btn" value="Calculate">
+        <div class="row">
+          <label for="height">Height (cm):</label>
+          <input type="text" name="height" class="text-area height">
+        </div>
+        </form>
       </div>
+      <input type="submit" id="calc-btn" value="Calculate">
+      <div class="result"></div>
+      <!-- Could be semantic, but it seems to work right now -->
+      <!-- <div class="footer">
+        <p>Copyright&copy 8Dev</p>
+      </div> -->
     </div>
-    <p class="result"></p>
-  </main>
-
+  </div>
   <script src="main.js"></script>
 </body>
 </html>
