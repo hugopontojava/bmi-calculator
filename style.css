@@ -4,15 +4,9 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.title {
-  text-align: center;
-  margin: 16px;
-  color: rgb(25, 136, 233);
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+body, html {
+  font-size: 18px;
+  cursor: default;
 }
 
 .main-container {
@@ -23,26 +17,101 @@ body {
   text-align: center;
 }
 
+.content-wrapper {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  width: 320px;
+  height: 240px;
+  margin-top: 40px;
+  background-color: rgba (255,255,255, 0.75);
+}
+
+.title {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 16px 0 0 0;
+  color: rgb(25, 136, 233);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
 .sub-title {
-  margin: 0 0 8px 0
+  margin: 8px
+}
+
+.row {
+  margin: 8px;
 }
 
 label {
-  font-weight: 600;
+  font-size: 16px;
 }
 
-input {
+.text-area {
   border: 0;
-  border-radius: 10px;
+  border-radius: 5px;
+  color: rgba(25, 136, 233, 0.5);
   background-color: rgba(156, 156, 156, 0.338);
+  padding: 8px;
+  height: 16px;
+  width: 80px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.text-area:focus {
+  outline: rgba(25, 136, 233, 0.5) dotted 1.5px;
+  box-shadow:  0 0 8px 1px rgba(25, 136, 233, 0.5);
 }
 
 #calc-btn {
   border: 0;
   border-radius: 24px;
-  margin: 16px;
-  width: 80px;
+  margin: 16px 0 0 0;
+  width: 120px;
   height: 20px;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
+  background-color: rgb(25, 136, 233);
+  color: rgb(237, 237, 237);
+  cursor: pointer;
+  transition: box-shadow 0.5s ease-in, opacity 0.25s ease-out, transform 1s ease-out;
+}
+
+#calc-btn:hover {
+  box-shadow: 0 4px 8px 2px rgba(25, 136, 233, 0.5);
+  opacity: 0.8;
+  transform: translateY(-2.5px)
+}
+
+#calc-btn:active {
+  opacity: 0.6;
+  box-shadow: 0 0 8px 1px rgba(25, 136, 233, 0.5);
+}
+
+.footer {
+  font-size: 10px;
+  margin-top: 24px;
+}
+
+@media (min-width: 250px) and (max-width: 450px) {
+  body {
+    font-size: 24px;
+  }
+  .content-wrapper {
+    border: 0;
+  }
+  #calc-btn {
+    transition: box-shadow 0.5s ease-in, opacity 0 ease-in
+  }
+  #calc-btn:hover {
+    box-shadow: 0 0 0 0;
+    transform: none
+  }
+  #calc-btn:active {
+    opacity: 0.6;
+    box-shadow: 0 0 8px 2px rgba(25, 136, 233, 0.5)
+  }
+  .footer {
+    margin-top: 20vh;
+  }
 }
