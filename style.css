@@ -5,7 +5,8 @@
 }
 
 body, html {
-  font-size: 18px;
+  font-size: 28px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   cursor: default;
 }
 
@@ -20,8 +21,8 @@ body, html {
 .content-wrapper {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  width: 320px;
-  height: 240px;
+  width: 400px;
+  height: 380px;
   margin-top: 40px;
   background-color: rgba (255,255,255, 0.75);
 }
@@ -34,11 +35,7 @@ body, html {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-.sub-title {
-  margin: 8px
-}
-
-.row {
+.sub-title, .row {
   margin: 8px;
 }
 
@@ -49,11 +46,11 @@ label {
 .text-area {
   border: 0;
   border-radius: 5px;
+  padding: 4px 4px 2px 4px;
+  height: 20px;
+  width: 88px;
   color: rgba(25, 136, 233, 0.5);
   background-color: rgba(156, 156, 156, 0.338);
-  padding: 8px;
-  height: 16px;
-  width: 80px;
   font-size: 16px;
   font-weight: 700;
 }
@@ -66,20 +63,20 @@ label {
 #calc-btn {
   border: 0;
   border-radius: 24px;
-  margin: 16px 0 0 0;
   width: 120px;
   height: 20px;
+  margin: 16px ;
   font-size: 18px;
   font-weight: 600;
-  background-color: rgb(25, 136, 233);
   color: rgb(237, 237, 237);
+  background-color: rgb(25, 136, 233);
   cursor: pointer;
   transition: box-shadow 0.5s ease-in, opacity 0.25s ease-out, transform 1s ease-out;
 }
 
 #calc-btn:hover {
-  box-shadow: 0 4px 8px 2px rgba(25, 136, 233, 0.5);
   opacity: 0.8;
+  box-shadow: 0 4px 8px 2px rgba(25, 136, 233, 0.5);
   transform: translateY(-2.5px)
 }
 
@@ -88,9 +85,10 @@ label {
   box-shadow: 0 0 8px 1px rgba(25, 136, 233, 0.5);
 }
 
-.footer {
-  font-size: 10px;
-  margin-top: 24px;
+.result {
+  margin: 16px;
+  color: rgba(25, 136, 233, .6);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 @media (min-width: 250px) and (max-width: 450px) {
@@ -104,14 +102,20 @@ label {
     transition: box-shadow 0.5s ease-in, opacity 0 ease-in
   }
   #calc-btn:hover {
+    transform: none;
     box-shadow: 0 0 0 0;
-    transform: none
   }
   #calc-btn:active {
     opacity: 0.6;
     box-shadow: 0 0 8px 2px rgba(25, 136, 233, 0.5)
   }
-  .footer {
-    margin-top: 20vh;
+}
+
+@media (min-width: 450px) and (max-width: 720px) {
+  body {
+    font-size: 28px;
+  }
+  .content-wrapper {
+    border: 0;
   }
 }
