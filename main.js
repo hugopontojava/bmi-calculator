@@ -1,19 +1,18 @@
-let info = {
-  kg: '0',
-  height: '0',
-  imcCalc: (kg, alt) => { 
-    (kg / (alt*2))
-  }
-}
-
 const weight = document.querySelector('.weight');
 const height = document.querySelector('.height');
 
-
-const btn = document.getElementById('calc-btn') 
+const btn = document.getElementById('calc-btn') ;
 btn.addEventListener('click', () => {
-  const resultBox = document.querySelector('.result');
-  const result = document.createTextNode(`Your BMI are:`)
+  function imcCalc () {
+    return parseFloat((weight.value / ((height.value ** 2) * 0.0001))).toFixed(2);
+  }
 
-  resultBox.appendChild(result)
+  if (height.value == 0 && weight.value == 0) {
+    alert('Both values need to be diferent of 0!');
+  } else {
+    console.log(imcCalc()); 
+      const resultBox = document.querySelector('.result');
+      const result = document.createTextNode(`Your BMI is: ${imcCalc()}kg/m²`);
+      resultBox.appendChild(result);
+  }
 })
