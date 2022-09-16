@@ -1,7 +1,7 @@
 const weight = document.querySelector('.weight');
 const height = document.querySelector('.height');
 
-function clearValues() {
+function clearValues () {
   weight.value = 0;
   height.value = 0
 }
@@ -18,35 +18,47 @@ btn.addEventListener('click', () => {
       const resultBox = document.querySelector('.result');
       const result = document.createTextNode(`Your BMI is: ${imcCalc()}kg/m²`);
       const p = document.createElement('p');
-      
+
       resultBox.appendChild(result);
 
+      function eraseResult () {
+        if (resultBox.childNodes.length > 2) {
+          resultBox.firstChild.remove()
+          resultBox.firstElementChild.remove()
+        }
+      }
+      
       if ( imcCalc() < 18.5 ) {
         clearValues();
+        eraseResult();
 
         const classResult = document.createTextNode('It is: Underweight');
         resultBox.appendChild(p);
         p.appendChild(classResult);
       } else if ( imcCalc() >= 18.5 && imcCalc() <= 24.9 ) {
         clearValues();
+        eraseResult();
 
           const classResult = document.createTextNode('It is: Normal');
           resultBox.appendChild(p);
           p.appendChild(classResult);
       } else if ( imcCalc() > 24.9 && imcCalc() <= 29.9 ) {
         clearValues();
+        eraseResult();
 
           const classResult = document.createTextNode('It is: Overweight');
           resultBox.appendChild(p);
           p.appendChild(classResult);
       } else if ( imcCalc() >= 30.0 && imcCalc() <= 39.9 ) {
         clearValues();
+        eraseResult();
 
           const classResult = document.createTextNode('It is: Obesity');
           resultBox.appendChild(p);
           p.appendChild(classResult);
       } else if ( imcCalc() > 39.9 ) {
         clearValues();
+        eraseResult();
 
           const classResult = document.createTextNode('It is: Severe Obesity');
           resultBox.appendChild(p);
