@@ -10,7 +10,7 @@ Weight(kilograms) and Height(centimeters) must have a result. Recommend to be an
 
 ## Preview image
 
-![BMI calculator preview img](./img/bmi-calculator-preview-img.pngbmi-calculator-preview-img.png)
+![BMI calculator preview img](./img/bmi-calculator-preview-img.png)
 
 ## Used stacks
 
