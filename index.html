@@ -11,26 +11,22 @@
 <body>
   <div class="main-container">
     <div class="content-wrapper">
-    <h1 class="title">BMI Calculator</h1>
-    <h2 class="sub-title">Insert your infos:</h2>
-    <div class="">
-      <form action="#">
-        <div class="row">
-          <label for="weight">Weight (kg):</label>
-          <input type="text" name="weight" class="text-area weight" value="0">
-        </div>
-        <div class="row">
-          <label for="height">Height (cm):</label>
-          <input type="text" name="height" class="text-area height" value="0">
-        </div>
+      <h1 class="title">BMI Calculator</h1>
+      <h2 class="sub-title">Insert your infos:</h2>
+      <div class="">
+        <form action="#">
+          <div class="row">
+            <label for="weight">Weight (kg):</label>
+            <input type="text" name="weight" class="text-area weight" value="0">
+          </div>
+          <div class="row">
+            <label for="height">Height (cm):</label>
+            <input type="text" name="height" class="text-area height" value="0">
+          </div>
         </form>
+        <input type="submit" id="calc-btn" value="Calculate">
       </div>
-      <input type="submit" id="calc-btn" value="Calculate">
       <div class="result"></div>
-      <!-- Could be semantic, but it seems to work right now -->
-      <!-- <div class="footer">
-        <p>Copyright&copy 8Dev</p>
-      </div> -->
     </div>
   </div>
   <script src="main.js"></script>
