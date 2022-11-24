@@ -1,68 +1,61 @@
-const weight = document.querySelector('.weight');
-const height = document.querySelector('.height');
+const weight = document.querySelector(".weight")
+const height = document.querySelector(".height")
+const btn = document.getElementById("calc-btn")
+const resultBox = document.querySelector(".result")
+const p = document.createElement("p")
 
-function clearValues () {
-  weight.value = 0;
-  height.value = 0
+function clearValues() {
+	weight.value = 0
+	height.value = 0
 }
 
-const btn = document.getElementById('calc-btn') ;
-btn.addEventListener('click', () => {
-  function imcCalc () {
-    return parseFloat((weight.value / ((height.value ** 2) * 0.0001))).toFixed(1);
-  }
+function bmiCalc() {
+	return parseFloat(weight.value / (height.value ** 2 * 0.0001)).toFixed(1)
+}
 
-  if (height.value == 0 && weight.value == 0) {
-    alert('Both values need to be diferent of 0!');
-  } else {
-      const resultBox = document.querySelector('.result');
-      const result = document.createTextNode(`Your BMI is: ${imcCalc()}kg/m²`);
-      const p = document.createElement('p');
+function bmiType() {
+	if (bmiCalc() < 18.5) {
+		const typeRes = document.createTextNode("You is: Underweight")
+		resultBox.appendChild(p)
+		p.appendChild(typeRes)
+	} else if (bmiCalc() >= 18.5 && bmiCalc() <= 24.9) {
+		const typeRes = document.createTextNode("You is: Normal")
+		resultBox.appendChild(p)
+		p.appendChild(typeRes)
+	} else if (bmiCalc() > 24.9 && bmiCalc() <= 29.9) {
+		const typeRes = document.createTextNode("You is: Overweight")
+		resultBox.appendChild(p)
+		p.appendChild(typeRes)
+	} else if (bmiCalc() >= 30.0 && bmiCalc() <= 39.9) {
+		const typeRes = document.createTextNode("You is: Obesity")
+		resultBox.appendChild(p)
+		p.appendChild(typeRes)
+	} else if (bmiCalc() > 39.9) {
+		const typeRes = document.createTextNode("You is: Severe Obesity")
+		resultBox.appendChild(p)
+		p.appendChild(typeRes)
+	}
+}
 
-      resultBox.appendChild(result);
+function createRes() {
+	const res = document.createTextNode(`Your BMI is: ${bmiCalc()}kg/m²`)
+	resultBox.appendChild(res)
+}
 
-      function eraseResult () {
-        if (resultBox.childNodes.length > 2) {
-          resultBox.firstChild.remove()
-          resultBox.firstElementChild.remove()
-        }
-      }
-      
-      if ( imcCalc() < 18.5 ) {
-        clearValues();
-        eraseResult();
+// TODO: understand why just the bmiType is erased.
+function eraseRes() {
+	if (resultBox.childNodes.length > 2) {
+		resultBox.remove()
+	}
+}
 
-        const classResult = document.createTextNode('It is: Underweight');
-        resultBox.appendChild(p);
-        p.appendChild(classResult);
-      } else if ( imcCalc() >= 18.5 && imcCalc() <= 24.9 ) {
-        clearValues();
-        eraseResult();
-
-          const classResult = document.createTextNode('It is: Normal');
-          resultBox.appendChild(p);
-          p.appendChild(classResult);
-      } else if ( imcCalc() > 24.9 && imcCalc() <= 29.9 ) {
-        clearValues();
-        eraseResult();
-
-          const classResult = document.createTextNode('It is: Overweight');
-          resultBox.appendChild(p);
-          p.appendChild(classResult);
-      } else if ( imcCalc() >= 30.0 && imcCalc() <= 39.9 ) {
-        clearValues();
-        eraseResult();
-
-          const classResult = document.createTextNode('It is: Obesity');
-          resultBox.appendChild(p);
-          p.appendChild(classResult);
-      } else if ( imcCalc() > 39.9 ) {
-        clearValues();
-        eraseResult();
-
-          const classResult = document.createTextNode('It is: Severe Obesity');
-          resultBox.appendChild(p);
-          p.appendChild(classResult);
-      } 
-    }
+btn.addEventListener("click", () => {
+	if (height.value != 0 || weight.value != 0) {
+		createRes()
+		bmiType()
+		eraseRes()
+		clearValues()
+	} else {
+		alert("Both values need to be diferent of 0!")
+	}
 })
